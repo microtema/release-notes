@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'se.bjurr.gitchangelog.git-changelog-gradle-plugin' version '1.63'
+}
+
+group 'de.microtema'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+task gitChangelogTask(type: se.bjurr.gitchangelog.plugin.gradle.GitChangelogTask) {
+    file = new File("CHANGELOG.md");
+}
